@@ -881,7 +881,7 @@ class Area extends Controller
             }
         }
         $sql .= empty($sql) ? '' : ' union all ';
-        $sql.="select '7,8,9,10,11,51' grade_id,'大学及以上' name,count(1) value from members m
+        $sql.="select '100' grade_id,'大学及以上' name,count(1) value from members m
         left join (select * FROM edu_records rr where not exists(select 1 from edu_records where rr.member_id = member_id and rr.id<id))r
         on r.member_id=m.id
         left join areas a on m.area_id=a.id
